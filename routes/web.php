@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\testController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,9 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', testController::class .'@index')->name('firstcodes.index');
 // returns the home page with all posts
-Route::get('/', PostController::class .'@index')->name('posts.index');
+// Route::get('/', PostController::class .'@index')->name('posts.index');
 // returns the form for adding a post
 Route::get('/posts/create', PostController::class . '@create')->name('posts.create');
 // adds a post to the database

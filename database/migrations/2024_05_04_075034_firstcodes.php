@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Addbuilding extends Migration
+class Firstcodes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class Addbuilding extends Migration
      */
     public function up()
     {
-       
-  Schema::create('posts', function (Blueprint $table) {
-    $table->id();
-    $table->string('title');
-    $table->text('body');
-    $table->timestamps();
-  });
+        Schema::create("firstcodes",function(Blueprint $table){
+          $table->id();
+          $table->string("name");
+          $table->string("email");
+          $table->string("body");     
+          $table->timestamps();  
+
+
+        });
     }
 
     /**
@@ -29,6 +31,6 @@ class Addbuilding extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('posts');
+        
     }
 }
